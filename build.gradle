@@ -14,3 +14,8 @@ dependencies {
     compile 'org.bukkit:bukkit:1.7.2-R0.3-SNAPSHOT'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
+
+task copyToServer(dependsOn: 'jar', type: Copy) {
+    from 'build/libs/'
+    into "TestServer/plugins/"
+}
